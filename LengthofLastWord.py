@@ -2,11 +2,12 @@ class Solution:
     # @param s, a string
     # @return an integer
     def lengthOfLastWord(self, s):
-        splittedString = s.split(' ')
-        print splittedString
-        if len(splittedString) < 2:
-            return len(splittedString[-1])
-        return len(splittedString[-2])
+        import re
+        if re.search(r' *([a-zA-Z]+) *\Z',s) is None:
+            return 0
+        else:
+            return len(re.search(r' *([a-zA-Z]+) *\Z',s).group(1))
 
+        
 s = Solution()
-print s.lengthOfLastWord(' a')
+print s.lengthOfLastWord('')
