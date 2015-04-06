@@ -4,6 +4,9 @@ class Solution:
     def lengthOfLastWord(self, s):
         count = 0
 
+        if len(s) == 0:
+            return count
+
         for i in s[::-1]:
             if i==' ':
                 return count
@@ -11,4 +14,4 @@ class Solution:
                 count = count + 1
 
 s = Solution()
-print s.lengthOfLastWord('')
+print s.lengthOfLastWord('a')
