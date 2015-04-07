@@ -3,10 +3,11 @@ class Solution:
     # @return an integer
     def lengthOfLastWord(self, s):
         import re
-        if re.search(r' *([a-zA-Z]+) *\Z',s) is None:
+        tmp = re.search(r' *([a-zA-Z]+) *\Z',s)
+        if tmp is None:
             return 0
         else:
-            return len(re.search(r' *([a-zA-Z]+) *\Z',s).group(1))
+            return len(tmp.group(1))
 
         
 s = Solution()
